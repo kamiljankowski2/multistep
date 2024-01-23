@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formularz Multistep – Kamil Jankowski</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="multiform-container">
+        <div class="multiform-navigation">
+            <ol class="multiform-navigation-list">
+                <li>
+                    <a href="#step-1"  data-step="step-1"  data-counter="1" class="step-active">
+                        <div>
+                            <span class="step">STEP 1</span>
+                            <span class="step-name">Your Info</span>
+                        </div>
+                    </a>
+                </li>
+                <li data-step="2">
+                    <a href="#step-2" data-step="step-2" data-counter="2">
+                        <div>
+                            <span class="step">STEP 2</span>
+                            <span class="step-name">Select Plan</span>
+                        </div>
+                    </a>
+                </li>
+                <li data-step="3">
+                    <a href="#step-3" data-step="step-3"  data-counter="3">
+                        <div>
+                            <span class="step">STEP 3</span>
+                            <span class="step-name">Add-ons</span>
+                        </div>
+                    </a>
+                </li>
+                <li data-step="4">
+                    <a href="#step-4" data-step="step-4"  data-counter="4">
+                        <div>
+                            <span class="step">STEP 4</span>
+                            <span class="step-name">Summary</span>
+                        </div>
+                    </a>
+                </li>
+            </ol>
+        </div>
+        <div class="multiform-multiform">
+            <form action="">
+                <ol class="multiform-steps">
+                    <li class="multiform-step step-active" data-step="step-1">
+                        <h2 class="multiform-step-title">Personal info</h2>
+                        <p class="multiform-step-desc">Please provide your name, email adress and phone number.</p>
+                        <label for="name">Name</label>
+                        <input type="text" name="name" id="name" data-function="single-value" >
+                        <label for="email">Email adress</label>
+                        <input type="email" name="email" id="email" data-function="single-value" >
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" name="Phone" id="phone" data-function="single-value" >
+
+                        <div class="button-group">
+                            <a href="#step-2" class="next">Next</a>
+                        </div>
+                    </li>
+                    <li class="multiform-step" data-step="step-2">
+                        <h2 class="multiform-step-title">Select your plan</h2>
+                        <p class="multiform-step-desc">You have the option of billing.</p>
+                        <div class="plans">
+                            <div class="plan">
+                                <input type="radio" data-function="single-value-price" name="plan" id="arcade" value="Arcade" data-price="9">
+                                <label for="arcade">
+                                    <img src="./images/icon-arcade.svg" alt="Arcade plan">
+                                    <span>Arcade</span>
+                                    <span class="plan-price">$9</span>
+                                </label>
+                                
+                            </div>
+                            <div class="plan">
+                                <input type="radio" data-function="single-value-price"  name="plan" id="advanced" value="Advanced"  data-price="12">
+                                <label for="advanced">
+                                    <img src="./images/icon-advanced.svg" alt="Advanced plan">
+                                    <span>Advanced</span>
+                                    <span class="plan-price">$12</span>
+                                </label>
+                                
+                            </div>
+                            <div class="plan">
+                                <input type="radio" data-function="single-value-price"  name="plan" id="pro" value="Pro"  data-price="15">
+                                <label for="pro">
+                                    <img src="./images/icon-pro.svg" alt="Pro plan">
+                                    <span>Pro</span>
+                                    <span class="plan-price">$15</span>
+                                </label>
+                                
+                            </div>
+                        </div>
+                        <div class="button-group">
+                            <a href="#step-1"class="back">Back</a>
+                            <a href="#step-3" class="next">Next</a>
+                        </div>
+                    </li>
+                    <li class="multiform-step"  data-step="step-3">
+                        <h2 class="multiform-step-title">Pick add-ons</h2>
+                        <p class="multiform-step-desc">Add-ons help enhance your gaming experience</p>
+                        <div class="addons">
+                            <div class="addon">
+                                <input type="checkbox" data-function="multi-value" name="addon" id="online-service" value="online-service" data-price="1">
+                                <label for="online-service">
+                                    <p class="addon-name">Online service <br> <span class="addon-detail">Access to multiplayer games</span></p>
+                                    <span class="addon-price">+$1</span>
+                                </label>
+                            </div>
+                            <div class="addon">
+                                <input type="checkbox" data-function="multi-value" name="addon" id="larger-storage" value="larger-storage" data-price="2"> 
+                                <label for="larger-storage">
+                                    <p class="addon-name">Larger storage <br> <span class="addon-detail">Extra 1TB of cloud save</span></p>
+                                    <span class="addon-price">+$2</span>
+                                </label>
+                            </div>
+                            <div class="addon">
+                                <input type="checkbox" data-function="multi-value" name="addon" id="customizable-profile" value="customizable-profile" data-price="3">
+                                <label for="customizable-profile">
+                                    <p class="addon-name">Customizable Profile <br> <span class="addon-detail">Custom theme on your profile</span></p>
+                                    <span class="addon-price">+$3</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="button-group">
+                            <a href="#step-2"class="back">Back</a>
+                            <a href="#step-4" class="next">Next</a>
+                        </div>
+                    </li>
+                    <li class="multiform-step"  data-step="step-4">
+                        <h2 class="multiform-step-title">Finishing up</h2>
+                        <p class="multiform-step-desc">Double-check everything looks OK before confirming.</p>
+                        <ul class="summary">
+                            <li>
+                                <div>
+                                    <span class="selected-plan"></span>
+                                    <a href="#step-2">change</a>
+                                </div>
+                                <span class="selected-plan-price">9$</span>
+                            </li>
+                            <li>
+                                
+                                <ul class="selected-addons-list">
+                                   
+                                    
+                                </ul>
+                            </li>
+                            <li>
+                                <span class="price-title">Total</span>
+                                <span class="price-total"></span>
+                            </li>
+                        </ul>
+                        <div class="button-group">
+                            <a href="#step-3" class="back">Back</a>
+                            <a href="#step-5" class="next">Send</a>
+                        </div>
+                    </li>
+                    <li class="multiform-step"  data-step="step-5">
+                        <img src="./images/icon-thank-you.svg" alt="Form send">
+                        <h2 class="multiform-step-title">Thank you!</h2>
+                        <p class="multiform-step-desc">Thanks for confirming your subscription! We hope you have fun using our platform. If you ever need support, please feel free to email us lorem@ipsum.lorem</p>
+                    </li>
+                </ol>
+            </form>
+        </div>
+    </div>
+
+    <script src="./index.js"></script>
+</body>
+</html> 
+
+
+
